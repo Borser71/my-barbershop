@@ -108,7 +108,7 @@
         .services {
             padding: 60px 0;
             background: #fffaf5;
-            scroll-margin-top: 80px; /* Для плавной прокрутки */
+            scroll-margin-top: 80px;
         }
 
         .section-title {
@@ -196,6 +196,7 @@
             color: #ffefea;
             padding: 60px 0 40px;
             text-align: center;
+            scroll-margin-top: 80px;
         }
 
         .contact-section h2 {
@@ -231,9 +232,31 @@
             transform: scale(1.02);
         }
 
+        /* Стили для телефона и email в блоке контактов */
+        .contact-info {
+            margin-top: 20px;
+            font-size: 1rem;
+            background: rgba(255,255,240,0.05);
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 40px;
+        }
+        .contact-info p {
+            margin: 8px 0;
+        }
+        .contact-info a {
+            color: #ffefea;
+            text-decoration: none;
+            border-bottom: 1px dotted #ffefea;
+        }
+        .contact-info a:hover {
+            color: #b45f3b;
+            border-bottom-color: #b45f3b;
+        }
+
         .hours {
             margin-top: 30px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             background: rgba(255,255,240,0.05);
             display: inline-block;
             padding: 16px 32px;
@@ -248,7 +271,7 @@
             text-align: center;
             padding: 30px 0 50px;
             background: #2c1a12;
-            scroll-margin-top: 80px; /* Для плавной прокрутки */
+            scroll-margin-top: 80px;
         }
         .chatbot-label {
             display: block;
@@ -274,7 +297,7 @@
             font-weight: bold !important;
         }
 
-        /* Стили для обновленного футера с кнопками */
+        /* Стили для футера с кнопками */
         .footer {
             background: #faf0ea;
             padding: 40px 20px 30px;
@@ -342,6 +365,9 @@
                 padding: 8px 18px;
                 font-size: 0.9rem;
             }
+            .contact-info, .hours {
+                padding: 12px 20px;
+            }
         }
     </style>
 </head>
@@ -369,7 +395,7 @@
         </div>
     </section>
 
-    <!-- Добавлен ID для якоря, чтобы кнопка "Цены" вела сюда -->
+    <!-- Блок Цены (якорь) -->
     <section id="services-section" class="services">
         <div class="container">
             <h2 class="section-title">Наши услуги</h2>
@@ -414,13 +440,19 @@
         </div>
     </section>
 
-    <section class="contact-section">
+    <!-- Блок Контакты (якорь) + явно указаны телефон и email -->
+    <section id="contacts-section" class="contact-section">
         <div class="container">
             <h2 class="section-title" style="color: #ffdccc;">Свяжитесь удобным способом</h2>
             <div class="contact-details">
                 <a href="tel:+79123456789">📞 Позвонить</a>
                 <a href="mailto:hello@hairstyle.ru">✉️ Email</a>
                 <a href="https://wa.me/79123456789" target="_blank">💬 WhatsApp</a>
+            </div>
+            <!-- Здесь явно прописаны телефон и email -->
+            <div class="contact-info">
+                <p>📞 <strong>Телефон:</strong> <a href="tel:+79123456789">+7 (912) 345-67-89</a></p>
+                <p>✉️ <strong>Email:</strong> <a href="mailto:hello@hairstyle.ru">hello@hairstyle.ru</a></p>
             </div>
             <div class="hours">
                 <p>🕒 Ежедневно: 10:00 – 21:00</p>
@@ -431,9 +463,9 @@
         </div>
     </section>
 
-    <!-- Добавлен ID для якоря, чтобы кнопка "FAQ" вела сюда (к чат-боту) -->
+    <!-- Блок FAQ / Чат-бот (якорь) -->
     <div id="faq-section" class="chatbot-center">
-        <span class="chatbot-label">🤖 Чат-бот</span>
+        <span class="chatbot-label">🤖 Чат-бот — ответы на вопросы (FAQ)</span>
         <div id="bh-widget-button-root"
              data-bh-widget-id="5"
              data-bh-customer-id="624307">
@@ -441,12 +473,13 @@
     </div>
 </main>
 
-<!-- НОВЫЙ ФУТЕР С ТРЕМЯ КНОПКАМИ -->
+<!-- ФУТЕР С ЧЕТЫРЬМЯ КНОПКАМИ -->
 <footer class="footer">
     <div class="container">
         <div class="footer-buttons">
             <a href="#services-section" class="footer-btn">💰 Цены</a>
-            <a href="#faq-section" class="footer-btn">❓ FAQ</a>
+            <a href="#faq-section" class="footer-btn">❓ FAQ (чат-бот)</a>
+            <a href="#contacts-section" class="footer-btn">📞 Контакты</a>
             <a href="https://barbershop.borser.site/offer/" class="footer-btn" target="_blank">📜 Публичная оферта</a>
         </div>
         <div class="footer-copyright">
@@ -464,7 +497,7 @@
     [class*="powered-by"] { display: none !important; }
 </style>
 
-<!-- Небольшой скрипт для плавной прокрутки к якорям (делает движение красивым) -->
+<!-- Скрипт для плавной прокрутки -->
 <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
