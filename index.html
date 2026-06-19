@@ -94,7 +94,7 @@
 
         /* ===== Герой ===== */
         .hero {
-            padding: 60px 0 40px;
+            padding: 40px 0 20px; /* Уменьшен нижний отступ */
             text-align: center;
         }
 
@@ -118,13 +118,13 @@
             padding: 8px 20px;
             border-radius: 40px;
             font-weight: 500;
-            margin-top: 24px;
+            margin-top: 20px; /* Уменьшен отступ сверху */
             color: #b45f3b;
         }
 
         /* ===== Услуги ===== */
         .services {
-            padding: 60px 0;
+            padding: 30px 0 60px; /* Уменьшен верхний отступ */
             background: #fffaf5;
             scroll-margin-top: 80px;
         }
@@ -133,7 +133,7 @@
             text-align: center;
             font-size: 2.2rem;
             font-weight: 600;
-            margin-bottom: 48px;
+            margin-bottom: 40px; /* Уменьшен отступ до сетки */
             color: #2c1a12;
         }
 
@@ -161,7 +161,7 @@
         }
 
         .service-image-wrapper {
-            flex: 0 0 45%;
+            flex: 0 0 45%; /* Прежний размер */
             overflow: hidden;
         }
 
@@ -319,26 +319,26 @@
         }
 
         .footer-links {
-            margin-bottom: 15px; /* Отступ между кнопкой и копирайтом */
+            margin-bottom: 15px;
         }
 
         .footer-links a {
-            display: inline-block; /* Чтобы применить padding и border-radius */
+            display: inline-block;
             color: #b45f3b;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.2s;
             font-size: 0.9rem;
-            padding: 8px 24px; /* Внутренние отступы для овала */
-            border: 1px solid #b45f3b; /* Рамка для овала */
-            border-radius: 40px; /* Сильное скругление — овал */
-            background: transparent; /* Прозрачный фон */
+            padding: 8px 24px;
+            border: 1px solid #b45f3b;
+            border-radius: 40px;
+            background: transparent;
         }
 
         .footer-links a:hover {
             background: #b45f3b;
             color: white;
-            text-decoration: none; /* Убираем подчеркивание при наведении */
+            text-decoration: none;
         }
 
         .footer p {
@@ -365,6 +365,7 @@
             }
             .service-image-wrapper {
                 flex: 0 0 200px;
+                width: 100%;
             }
             .service-image {
                 height: 200px;
@@ -375,6 +376,15 @@
             }
             .hero h1 {
                 font-size: 2.2rem;
+            }
+            .hero {
+                padding: 30px 0 15px;
+            }
+            .services {
+                padding: 20px 0 40px;
+            }
+            .section-title {
+                margin-bottom: 30px;
             }
             .contact-details {
                 gap: 14px;
@@ -413,9 +423,11 @@
         @media (max-width: 480px) {
             .service-image-wrapper {
                 flex: 0 0 160px;
+                width: 100%;
             }
             .service-image {
                 height: 160px;
+                width: 100%;
             }
             .service-card p {
                 font-size: 0.85rem;
@@ -560,7 +572,7 @@
             <div class="hours">
                 <p>🕒 Ежедневно: 10:00 – 21:00</p>
                 <p>📍 г. Москва, ул. Тверская, 22 (цокольный этаж, вход с арки)</p>
-                <p>💳 Наличные, СБП, карта</p> <!-- Изменённый текст -->
+                <p>💳 Наличные, СБП, карта</p>
                 <p>📱 Отвечаем в мессенджерах с 9:00 до 22:00</p>
             </div>
         </div>
