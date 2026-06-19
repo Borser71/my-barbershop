@@ -24,6 +24,7 @@
             padding: 0 24px;
         }
 
+        /* ===== Шапка ===== */
         .header {
             background-color: #fff6ef;
             border-bottom: 1px solid #ffe1cc;
@@ -76,6 +77,7 @@
             color: #b45f3b;
         }
 
+        /* ===== Герой ===== */
         .hero {
             padding: 60px 0 40px;
             text-align: center;
@@ -105,10 +107,10 @@
             color: #b45f3b;
         }
 
+        /* ===== Услуги ===== */
         .services {
             padding: 60px 0;
             background: #fffaf5;
-            scroll-margin-top: 80px;
         }
 
         .section-title {
@@ -121,18 +123,20 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 32px;
         }
 
         .service-card {
             background: white;
-            padding: 28px 20px;
             border-radius: 28px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-align: center;
             border: 1px solid #f7e5da;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-height: 260px;
         }
 
         .service-card:hover {
@@ -140,9 +144,23 @@
             box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
         }
 
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
+        .service-image-wrapper {
+            flex: 0 0 45%;
+            overflow: hidden;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .service-content {
+            flex: 1;
+            padding: 24px 28px 24px 24px;
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card h3 {
@@ -153,16 +171,22 @@
 
         .service-card p {
             color: #6f5543;
-            margin-bottom: 16px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 12px;
         }
 
         .price {
             font-weight: 700;
             font-size: 1.3rem;
             color: #2c1a12;
-            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #f0e0d6;
+            margin-top: auto;
         }
 
+        /* ===== О нас ===== */
         .about {
             padding: 60px 0;
         }
@@ -191,12 +215,12 @@
             margin-bottom: 8px;
         }
 
+        /* ===== Контакты ===== */
         .contact-section {
             background: #2c1a12;
             color: #ffefea;
             padding: 60px 0 40px;
             text-align: center;
-            scroll-margin-top: 80px;
         }
 
         .contact-section h2 {
@@ -234,7 +258,7 @@
 
         .hours {
             margin-top: 30px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             background: rgba(255,255,240,0.05);
             display: inline-block;
             padding: 16px 32px;
@@ -245,75 +269,61 @@
             margin: 6px 0;
         }
 
-        .chatbot-center {
+        /* ===== Подвал ===== */
+        .footer {
             text-align: center;
-            padding: 30px 0 50px;
-            background: #2c1a12;
-            scroll-margin-top: 80px;
-        }
-        .chatbot-label {
-            display: block;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #ffdccc;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-        }
-        #bh-widget-button-root {
-            position: static !important;
-            display: inline-block !important;
-            margin: 0 auto !important;
-            transform: none !important;
-            width: auto !important;
-            height: auto !important;
-        }
-        .bh-widget-button {
-            background-color: #b45f3b !important;
-            border-radius: 60px !important;
-            padding: 12px 32px !important;
-            font-size: 1.1rem !important;
-            font-weight: bold !important;
+            padding: 30px;
+            font-size: 0.85rem;
+            background: #faf0ea;
+            color: #5e3e2c;
         }
 
-        .footer {
-            background: #faf0ea;
-            padding: 40px 20px 30px;
-            text-align: center;
-            color: #5e3e2c;
-            border-top: 1px solid #ffe1cc;
-        }
-        .footer-buttons {
+        .footer-links {
+            margin-top: 12px;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 24px;
             flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-        .footer-btn {
-            background: white;
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            color: #b45f3b;
-            border: 1px solid #ffe1cc;
-            transition: all 0.2s ease;
-            display: inline-block;
-            font-size: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-        .footer-btn:hover {
-            background: #b45f3b;
-            color: white;
-            border-color: #b45f3b;
-            transform: translateY(-2px);
-        }
-        .footer-copyright {
-            font-size: 0.85rem;
-            opacity: 0.8;
         }
 
-        @media (max-width: 680px) {
+        .footer-links a {
+            color: #b45f3b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: #7a4028;
+            text-decoration: underline;
+        }
+
+        /* ===== Адаптив ===== */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .service-card {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .service-image-wrapper {
+                flex: 0 0 200px;
+            }
+
+            .service-image {
+                height: 200px;
+                width: 100%;
+            }
+
+            .service-content {
+                padding: 20px;
+            }
+
             .hero h1 {
                 font-size: 2.2rem;
             }
@@ -332,24 +342,27 @@
             .container {
                 padding: 0 16px;
             }
-            .chatbot-label {
-                font-size: 1.1rem;
+        }
+
+        @media (max-width: 480px) {
+            .service-image-wrapper {
+                flex: 0 0 160px;
             }
-            .footer-buttons {
-                gap: 15px;
+            .service-image {
+                height: 160px;
             }
-            .footer-btn {
-                padding: 8px 18px;
-                font-size: 0.9rem;
+            .service-card p {
+                font-size: 0.85rem;
             }
-            .hours {
-                padding: 12px 20px;
+            .service-card h3 {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
 
+<!-- ===== ШАПКА ===== -->
 <header class="header">
     <div class="container header-inner">
         <div class="logo">
@@ -359,11 +372,13 @@
             <a href="tel:+79123456789">📞 +7 (912) 345-67-89</a>
             <a href="mailto:hello@hairstyle.ru">✉️ hello@hairstyle.ru</a>
             <a href="https://wa.me/79123456789" target="_blank">💬 WhatsApp</a>
+            <a href="https://t.me/borisovsergey71" target="_blank">✈️ Telegram</a>
         </div>
     </div>
 </header>
 
 <main>
+    <!-- ===== ГЕРОЙ ===== -->
     <section class="hero">
         <div class="container">
             <h1>Стильная стрижка<br>и забота о волосах</h1>
@@ -372,38 +387,63 @@
         </div>
     </section>
 
-    <section id="services-section" class="services">
+    <!-- ===== УСЛУГИ ===== -->
+    <section class="services">
         <div class="container">
             <h2 class="section-title">Наши услуги</h2>
             <div class="services-grid">
+                <!-- Карточка 1 -->
                 <div class="service-card">
-                    <div class="service-icon">💇‍♂️</div>
-                    <h3>Мужская стрижка</h3>
-                    <p>Классика, fade, текстура — подберем образ</p>
-                    <div class="price">от 900 ₽</div>
+                    <div class="service-image-wrapper">
+                        <img class="service-image" src="https://barbershop.borser.site/images/1.png" alt="Мужская стрижка" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Мужская стрижка</h3>
+                        <p>Создаем аккуратные и стильные мужские стрижки с учетом ваших пожеланий. Подберем форму, которая подчеркнет достоинства внешности и будет удобна в ежедневной укладке.</p>
+                        <div class="price">от 900 ₽</div>
+                    </div>
                 </div>
+
+                <!-- Карточка 2 -->
                 <div class="service-card">
-                    <div class="service-icon">💇‍♀️</div>
-                    <h3>Женская стрижка</h3>
-                    <p>Каскад, боб, пикси, челка мечты</p>
-                    <div class="price">от 1200 ₽</div>
+                    <div class="service-image-wrapper">
+                        <img class="service-image" src="https://barbershop.borser.site/images/2.png" alt="Женская стрижка" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Женская стрижка</h3>
+                        <p>Женская стрижка с учетом формы лица, структуры волос и индивидуальных пожеланий. Создаем стильные, современные и удобные в уходе образы, подчеркивающие естественную красоту и индивидуальность.</p>
+                        <div class="price">от 1200 ₽</div>
+                    </div>
                 </div>
+
+                <!-- Карточка 3 -->
                 <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3>Окрашивание</h3>
-                    <p>Тонирование, брондирование, шатуш</p>
-                    <div class="price">от 2200 ₽</div>
+                    <div class="service-image-wrapper">
+                        <img class="service-image" src="https://barbershop.borser.site/images/3.png" alt="Окрашивание" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Окрашивание</h3>
+                        <p>Профессиональное окрашивание с подбором идеального оттенка. Используем качественные материалы и современные техники для стойкого цвета, блеска и здоровья волос.</p>
+                        <div class="price">от 2200 ₽</div>
+                    </div>
                 </div>
+
+                <!-- Карточка 4 -->
                 <div class="service-card">
-                    <div class="service-icon">🧔</div>
-                    <h3>Борода / Усы</h3>
-                    <p>Моделирование, коррекция, горячее полотенце</p>
-                    <div class="price">от 550 ₽</div>
+                    <div class="service-image-wrapper">
+                        <img class="service-image" src="https://barbershop.borser.site/images/4.png" alt="Борода и усы" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Борода / Усы</h3>
+                        <p>Стрижка, моделирование и оформление бороды и усов с учетом индивидуальных особенностей и желаемого стиля.</p>
+                        <div class="price">от 550 ₽</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== ПРЕИМУЩЕСТВА ===== -->
     <section class="about">
         <div class="container">
             <h2 class="section-title">Почему выбирают нас</h2>
@@ -416,13 +456,15 @@
         </div>
     </section>
 
-    <section id="contacts-section" class="contact-section">
+    <!-- ===== КОНТАКТЫ ===== -->
+    <section class="contact-section">
         <div class="container">
             <h2 class="section-title" style="color: #ffdccc;">Свяжитесь удобным способом</h2>
             <div class="contact-details">
-                <a href="tel:+79123456789">📞 Позвонить: +7 (912) 345-67-89</a>
-                <a href="mailto:hello@hairstyle.ru">✉️ Email: hello@hairstyle.ru</a>
+                <a href="tel:+79123456789">📞 Позвонить</a>
+                <a href="mailto:hello@hairstyle.ru">✉️ Email</a>
                 <a href="https://wa.me/79123456789" target="_blank">💬 WhatsApp</a>
+                <a href="https://t.me/borisovsergey71" target="_blank">✈️ Telegram</a>
             </div>
             <div class="hours">
                 <p>🕒 Ежедневно: 10:00 – 21:00</p>
@@ -432,48 +474,17 @@
             </div>
         </div>
     </section>
-
-    <div id="faq-section" class="chatbot-center">
-        <span class="chatbot-label">🤖 Чат-бот — ответы на вопросы (FAQ)</span>
-        <div id="bh-widget-button-root"
-             data-bh-widget-id="5"
-             data-bh-customer-id="624307">
-        </div>
-    </div>
 </main>
 
+<!-- ===== ПОДВАЛ ===== -->
 <footer class="footer">
     <div class="container">
-        <div class="footer-buttons">
-            <a href="#services-section" class="footer-btn">💰 Цены</a>
-            <a href="#faq-section" class="footer-btn">❓ FAQ (чат-бот)</a>
-            <a href="#contacts-section" class="footer-btn">📞 Контакты</a>
-            <a href="https://barbershop.borser.site/offer/" class="footer-btn" target="_blank">📜 Публичная оферта</a>
-        </div>
-        <div class="footer-copyright">
-            © 2025 Студия HAIR&STYLE — стрижки и уход по предварительной записи.<br>Мы используем только проверенные материалы и индивидуальный подход.
+        <p>© 2025 Студия HAIR&STYLE — стрижки и уход по предварительной записи.<br>Мы используем только проверенные материалы и индивидуальный подход.</p>
+        <div class="footer-links">
+            <a href="https://barbershop.borser.site/offer/">Публичная оферта</a>
         </div>
     </div>
 </footer>
 
-<script src="https://main.bothelp.io/w/widget-button.js" defer></script>
-
-<style>
-    .wh-landing-powered-by { display: none !important; }
-    .wh-landing-buttons { padding-bottom: 30px; }
-    [class*="powered-by"] { display: none !important; }
-</style>
-
-<script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-</script>
 </body>
 </html>
