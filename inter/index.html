@@ -64,6 +64,21 @@ nav{
     background:#2563eb;
 }
 
+/* ===== НОВЫЙ БЛОК С КАРТИНКОЙ В ШАПКЕ ===== */
+.header-image {
+    text-align: center;
+    padding: 20px 0 10px 0; /* Отступы сверху и снизу */
+}
+
+.header-image img {
+    max-width: 100%;      /* Чтобы картинка не выходила за границы экрана */
+    height: auto;         /* Сохраняем пропорции */
+    border-radius: 12px;  /* Скругление углов (можно убрать или изменить) */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3); /* Лёгкая тень для красоты */
+    display: block;       /* Убирает лишний отступ снизу */
+    margin: 0 auto;       /* Центрирование */
+}
+
 .hero{
     min-height:80vh;
     display:flex;
@@ -235,6 +250,16 @@ footer{
         </div>
 
     </nav>
+
+    <!-- ===== ВСТАВЛЕННАЯ КАРТИНКА ===== -->
+    <div class="header-image">
+        <img 
+            src="https://barbershop.borser.site/inter/images/whale1.png" 
+            alt="Баннер Digital Agency" 
+            loading="lazy"
+        >
+    </div>
+
 </header>
 
 <section class="hero">
