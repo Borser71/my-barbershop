@@ -94,7 +94,7 @@
 
         /* ===== Герой ===== */
         .hero {
-            padding: 40px 0 20px; /* Уменьшен нижний отступ */
+            padding: 40px 0 20px;
             text-align: center;
         }
 
@@ -118,13 +118,13 @@
             padding: 8px 20px;
             border-radius: 40px;
             font-weight: 500;
-            margin-top: 20px; /* Уменьшен отступ сверху */
+            margin-top: 20px;
             color: #b45f3b;
         }
 
         /* ===== Услуги ===== */
         .services {
-            padding: 30px 0 60px; /* Уменьшен верхний отступ */
+            padding: 30px 0 60px;
             background: #fffaf5;
             scroll-margin-top: 80px;
         }
@@ -133,7 +133,7 @@
             text-align: center;
             font-size: 2.2rem;
             font-weight: 600;
-            margin-bottom: 40px; /* Уменьшен отступ до сетки */
+            margin-bottom: 40px;
             color: #2c1a12;
         }
 
@@ -161,7 +161,7 @@
         }
 
         .service-image-wrapper {
-            flex: 0 0 45%; /* Прежний размер */
+            flex: 0 0 45%;
             overflow: hidden;
         }
 
@@ -202,7 +202,7 @@
             margin-top: auto;
         }
 
-        /* ===== О нас (Почему выбирают нас) ===== */
+        /* ===== О нас ===== */
         .about {
             padding: 60px 0;
         }
@@ -451,7 +451,8 @@
             ✂️ HAIR&STYLE <span>барбершоп</span>
         </div>
         <nav class="nav-menu">
-            <button class="nav-btn" onclick="document.getElementById('top').scrollIntoView({behavior: 'smooth'})">Главная</button>
+            <!-- ИСПРАВЛЕННАЯ КНОПКА "ГЛАВНАЯ" -->
+            <button class="nav-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Главная</button>
             <button class="nav-btn" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Услуги</button>
             <button class="nav-btn" onclick="document.getElementById('contacts').scrollIntoView({behavior: 'smooth'})">Контакты</button>
         </nav>
