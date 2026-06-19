@@ -202,33 +202,56 @@
             margin-top: auto;
         }
 
-        /* ===== О нас ===== */
+        /* ===== О нас (Почему выбирают нас) ===== */
         .about {
             padding: 60px 0;
         }
 
         .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
             margin-top: 40px;
         }
 
         .feature-item {
-            flex: 1;
-            min-width: 180px;
-            text-align: center;
             background: #fef4ed;
-            padding: 24px 16px;
+            padding: 24px 20px;
             border-radius: 32px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .feature-item strong {
+        .feature-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+            object-fit: contain;
             display: block;
-            font-size: 1.5rem;
+        }
+
+        .feature-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-text strong {
+            font-size: 1.2rem;
             color: #b45f3b;
-            margin-bottom: 8px;
+            margin-bottom: 2px;
+        }
+
+        .feature-text span {
+            font-size: 0.95rem;
+            color: #4d3729;
+            line-height: 1.4;
         }
 
         /* ===== Контакты ===== */
@@ -289,31 +312,37 @@
         /* ===== Подвал ===== */
         .footer {
             text-align: center;
-            padding: 30px;
+            padding: 30px 0;
             font-size: 0.85rem;
             background: #faf0ea;
             color: #5e3e2c;
         }
 
         .footer-links {
-            margin-top: 12px;
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
+            margin-bottom: 15px; /* Отступ между кнопкой и копирайтом */
         }
 
         .footer-links a {
+            display: inline-block; /* Чтобы применить padding и border-radius */
             color: #b45f3b;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: all 0.2s;
             font-size: 0.9rem;
+            padding: 8px 24px; /* Внутренние отступы для овала */
+            border: 1px solid #b45f3b; /* Рамка для овала */
+            border-radius: 40px; /* Сильное скругление — овал */
+            background: transparent; /* Прозрачный фон */
         }
 
         .footer-links a:hover {
-            color: #7a4028;
-            text-decoration: underline;
+            background: #b45f3b;
+            color: white;
+            text-decoration: none; /* Убираем подчеркивание при наведении */
+        }
+
+        .footer p {
+            margin: 5px 0;
         }
 
         /* ===== Адаптив ===== */
@@ -361,6 +390,24 @@
                 padding: 6px 16px;
                 font-size: 0.9rem;
             }
+
+            .features {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .feature-item {
+                padding: 18px 16px;
+            }
+            .feature-icon {
+                width: 40px;
+                height: 40px;
+            }
+            .feature-text strong {
+                font-size: 1.1rem;
+            }
+            .feature-text span {
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -375,6 +422,10 @@
             }
             .service-card h3 {
                 font-size: 1.2rem;
+            }
+            .feature-icon {
+                width: 36px;
+                height: 36px;
             }
         }
     </style>
@@ -464,10 +515,34 @@
         <div class="container">
             <h2 class="section-title">Почему выбирают нас</h2>
             <div class="features">
-                <div class="feature-item"><strong>⭐ 4.9</strong> отзывов на картах</div>
-                <div class="feature-item"><strong>🕒 10+ лет</strong> в центре города</div>
-                <div class="feature-item"><strong>🧴 японская косметика</strong> и европейские бренды</div>
-                <div class="feature-item"><strong>🏆 стилисты топ-уровня</strong> с портфолио</div>
+                <div class="feature-item">
+                    <img class="feature-icon" src="https://barbershop.borser.site/images/5.png" alt="Рейтинг" loading="lazy">
+                    <div class="feature-text">
+                        <strong>4.9</strong>
+                        <span>рейтинг отзывов на картах</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <img class="feature-icon" src="https://barbershop.borser.site/images/6.png" alt="Опыт" loading="lazy">
+                    <div class="feature-text">
+                        <strong>Более 10 лет</strong>
+                        <span>в центре города</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <img class="feature-icon" src="https://barbershop.borser.site/images/7.png" alt="Косметика" loading="lazy">
+                    <div class="feature-text">
+                        <strong>Японская косметика</strong>
+                        <span>и европейские бренды</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <img class="feature-icon" src="https://barbershop.borser.site/images/8.png" alt="Стилисты" loading="lazy">
+                    <div class="feature-text">
+                        <strong>Стилисты топ-уровня</strong>
+                        <span>с дипломами</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -485,7 +560,7 @@
             <div class="hours">
                 <p>🕒 Ежедневно: 10:00 – 21:00</p>
                 <p>📍 г. Москва, ул. Тверская, 22 (цокольный этаж, вход с арки)</p>
-                <p>💳 Наличные, карты, оплата онлайн</p>
+                <p>💳 Наличные, СБП, карта</p> <!-- Изменённый текст -->
                 <p>📱 Отвечаем в мессенджерах с 9:00 до 22:00</p>
             </div>
         </div>
@@ -495,10 +570,10 @@
 <!-- ===== ПОДВАЛ ===== -->
 <footer class="footer">
     <div class="container">
-        <p>© 2025 Студия HAIR&STYLE — стрижки и уход по предварительной записи.<br>Мы используем только проверенные материалы и индивидуальный подход.</p>
         <div class="footer-links">
             <a href="https://barbershop.borser.site/offer/" target="_blank">Публичная оферта</a>
         </div>
+        <p>© 2025 Студия HAIR&STYLE — стрижки и уход по предварительной записи.</p>
     </div>
 </footer>
 
