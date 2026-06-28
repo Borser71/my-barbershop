@@ -161,7 +161,7 @@
         }
 
         .service-image-wrapper {
-            flex: 0 0 55%; /* УВЕЛИЧЕНО до 55% (было 45%) */
+            flex: 0 0 55%;
             overflow: hidden;
         }
 
@@ -202,9 +202,10 @@
             margin-top: auto;
         }
 
-        /* ===== О нас ===== */
+        /* ===== Почему выбирают нас ===== */
         .about {
             padding: 60px 0;
+            scroll-margin-top: 80px; /* Для плавной прокрутки к блоку */
         }
 
         .features {
@@ -363,7 +364,6 @@
         }
 
         /* ===== АДАПТИВ ===== */
-        /* Для планшетов (до 1024px) — отключаем обрезание и делаем вертикальные карточки */
         @media (max-width: 1024px) {
             .services-grid {
                 grid-template-columns: 1fr 1fr;
@@ -374,14 +374,14 @@
                 min-height: auto;
             }
             .service-image-wrapper {
-                flex: 0 0 auto; /* Убираем фиксированную ширину */
+                flex: 0 0 auto;
                 width: 100%;
                 height: auto;
             }
             .service-image {
                 width: 100%;
                 height: auto;
-                object-fit: contain; /* Показываем фото целиком */
+                object-fit: contain;
                 display: block;
             }
             .service-content {
@@ -396,7 +396,6 @@
             }
         }
 
-        /* Для смартфонов (до 768px) — одна колонка */
         @media (max-width: 768px) {
             .header-inner {
                 flex-direction: column;
@@ -518,6 +517,8 @@
         <nav class="nav-menu">
             <button class="nav-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Главная</button>
             <button class="nav-btn" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Услуги</button>
+            <!-- НОВАЯ КНОПКА "ПРЕИМУЩЕСТВА" -->
+            <button class="nav-btn" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Преимущества</button>
             <button class="nav-btn" onclick="document.getElementById('contacts').scrollIntoView({behavior: 'smooth'})">Контакты</button>
         </nav>
     </div>
@@ -585,10 +586,10 @@
         </div>
     </section>
 
-    <!-- ===== ПРЕИМУЩЕСТВА ===== -->
-    <section class="about">
+    <!-- ===== ПОЧЕМУ ВЫБИРАЮТ НАС (добавлен ID) ===== -->
+    <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">Почему выбирают нас</h2>
+            <h2 class="section-title">Почему выбирают нас</h2> <!-- ЗАГОЛОВОК НЕ ИЗМЕНЁН -->
             <div class="features">
                 <div class="feature-item">
                     <img class="feature-icon" src="https://barbershop.borser.site/images/5.png" alt="Рейтинг" loading="lazy">
