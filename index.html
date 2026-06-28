@@ -161,7 +161,7 @@
         }
 
         .service-image-wrapper {
-            flex: 0 0 45%;
+            flex: 0 0 55%; /* УВЕЛИЧЕНО до 55% (было 45%) */
             overflow: hidden;
         }
 
@@ -202,7 +202,7 @@
             margin-top: auto;
         }
 
-        /* ===== О нас (Почему выбирают нас) ===== */
+        /* ===== О нас ===== */
         .about {
             padding: 60px 0;
         }
@@ -362,25 +362,26 @@
             margin: 5px 0;
         }
 
-        /* ===== АДАПТИВ ДЛЯ ПЛАНШЕТОВ (до 1024px) ===== */
+        /* ===== АДАПТИВ ===== */
+        /* Для планшетов (до 1024px) — отключаем обрезание и делаем вертикальные карточки */
         @media (max-width: 1024px) {
             .services-grid {
-                grid-template-columns: 1fr 1fr; /* Всё ещё две колонки */
+                grid-template-columns: 1fr 1fr;
                 gap: 24px;
             }
             .service-card {
-                flex-direction: column; /* Но карточка становится вертикальной */
+                flex-direction: column;
                 min-height: auto;
             }
             .service-image-wrapper {
-                flex: 0 0 auto;
+                flex: 0 0 auto; /* Убираем фиксированную ширину */
                 width: 100%;
                 height: auto;
             }
             .service-image {
                 width: 100%;
                 height: auto;
-                object-fit: contain; /* Картинка видна целиком */
+                object-fit: contain; /* Показываем фото целиком */
                 display: block;
             }
             .service-content {
@@ -395,7 +396,7 @@
             }
         }
 
-        /* ===== АДАПТИВ ДЛЯ СМАРТФОНОВ (до 768px) ===== */
+        /* Для смартфонов (до 768px) — одна колонка */
         @media (max-width: 768px) {
             .header-inner {
                 flex-direction: column;
@@ -406,7 +407,7 @@
                 justify-content: center;
             }
             .services-grid {
-                grid-template-columns: 1fr; /* Одна колонка */
+                grid-template-columns: 1fr;
                 gap: 24px;
             }
             .service-card {
