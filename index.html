@@ -94,7 +94,7 @@
 
         /* ===== Герой ===== */
         .hero {
-            padding: 40px 0 20px; /* Уменьшен нижний отступ */
+            padding: 40px 0 20px;
             text-align: center;
         }
 
@@ -118,13 +118,13 @@
             padding: 8px 20px;
             border-radius: 40px;
             font-weight: 500;
-            margin-top: 20px; /* Уменьшен отступ сверху */
+            margin-top: 20px;
             color: #b45f3b;
         }
 
         /* ===== Услуги ===== */
         .services {
-            padding: 30px 0 60px; /* Уменьшен верхний отступ */
+            padding: 30px 0 60px;
             background: #fffaf5;
             scroll-margin-top: 80px;
         }
@@ -133,7 +133,7 @@
             text-align: center;
             font-size: 2.2rem;
             font-weight: 600;
-            margin-bottom: 40px; /* Уменьшен отступ до сетки */
+            margin-bottom: 40px;
             color: #2c1a12;
         }
 
@@ -161,7 +161,7 @@
         }
 
         .service-image-wrapper {
-            flex: 0 0 45%; /* Прежний размер */
+            flex: 0 0 45%;
             overflow: hidden;
         }
 
@@ -309,14 +309,14 @@
             margin: 6px 0;
         }
 
-        /* ===== КАРТА (новая секция) ===== */
+        /* ===== КАРТА ===== */
         .map-container {
             max-width: 1152px;
             margin: 30px auto 0;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            line-height: 0; /* Убирает лишний отступ под iframe */
+            line-height: 0;
         }
 
         .map-container iframe {
@@ -362,7 +362,40 @@
             margin: 5px 0;
         }
 
-        /* ===== Адаптив ===== */
+        /* ===== АДАПТИВ ДЛЯ ПЛАНШЕТОВ (до 1024px) ===== */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: 1fr 1fr; /* Всё ещё две колонки */
+                gap: 24px;
+            }
+            .service-card {
+                flex-direction: column; /* Но карточка становится вертикальной */
+                min-height: auto;
+            }
+            .service-image-wrapper {
+                flex: 0 0 auto;
+                width: 100%;
+                height: auto;
+            }
+            .service-image {
+                width: 100%;
+                height: auto;
+                object-fit: contain; /* Картинка видна целиком */
+                display: block;
+            }
+            .service-content {
+                padding: 16px 20px 20px;
+            }
+            .service-card h3 {
+                margin-top: 0;
+            }
+            .price {
+                margin-top: 12px;
+                padding-top: 12px;
+            }
+        }
+
+        /* ===== АДАПТИВ ДЛЯ СМАРТФОНОВ (до 768px) ===== */
         @media (max-width: 768px) {
             .header-inner {
                 flex-direction: column;
@@ -373,7 +406,7 @@
                 justify-content: center;
             }
             .services-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Одна колонка */
                 gap: 24px;
             }
             .service-card {
@@ -381,16 +414,27 @@
                 min-height: auto;
             }
             .service-image-wrapper {
-                flex: 0 0 200px;
+                flex: 0 0 auto;
                 width: 100%;
+                height: auto;
             }
             .service-image {
-                height: 200px;
                 width: 100%;
+                height: auto;
+                object-fit: contain;
+                display: block;
             }
             .service-content {
-                padding: 20px;
+                padding: 16px 20px 20px;
             }
+            .service-card h3 {
+                margin-top: 0;
+            }
+            .price {
+                margin-top: 12px;
+                padding-top: 12px;
+            }
+
             .hero h1 {
                 font-size: 2.2rem;
             }
@@ -446,14 +490,6 @@
         }
 
         @media (max-width: 480px) {
-            .service-image-wrapper {
-                flex: 0 0 160px;
-                width: 100%;
-            }
-            .service-image {
-                height: 160px;
-                width: 100%;
-            }
             .service-card p {
                 font-size: 0.85rem;
             }
@@ -602,7 +638,6 @@
                 <p>📱 Отвечаем в мессенджерах с 9:00 до 22:00</p>
             </div>
 
-            <!-- ===== КАРТА (ВСТАВЛЕНА СНИЗУ) ===== -->
             <div class="map-container">
                 <iframe 
                     src="https://yandex.ru/map-widget/v1/?um=constructor%3Aba26d7f2006577ea29b051cbbdc75d00ee0b4587de67c5c9fe0be0e169df5db7&amp;source=constructor" 
